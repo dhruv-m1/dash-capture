@@ -1,9 +1,10 @@
 {
   "name": "dash-capture",
-  "productName": "dash-capture",
-  "version": "1.0.0",
-  "description": "My Electron application description",
-  "main": "src/index.js",
+  "productName": "Dash Capture",
+
+  "version": "0.5.0",
+  "description": "A no-nonsense screen caputure tool.",
+  "main": "src/app.js",
   "scripts": {
     "start": "electron-forge start",
     "package": "electron-forge package",
