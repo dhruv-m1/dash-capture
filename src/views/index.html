@@ -5,19 +5,90 @@
     <title>Dash Capture V0.5.0 (Beta)</title>
     <link rel="stylesheet" href="./style.css" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">
+    <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
+    <script src="https://cdn.rawgit.com/adriancooney/console.image/c9e6d4fd/console.image.min.js"></script>
   </head>
   <body>
-    <section class="columns">
-      <section class="column is-three-fifths">
-        <section class="stream">
 
-          <video muted="true"></video>
+    <div class="wrapper" id="app">
 
+      <section class="columns is-centered" id="top-row">
+        <section class="column" id="mode-selector">
+         <h5>Project Name</h5>
+         <input type='text' value='Screen Capture'/>
         </section>
       </section>
-      <div class="column">2</div>
-    </section>
 
-    <script defer src="./index.js"></script>
+      <section class="columns">
+
+        <section class="column is-three-fifths is-flex is-justify-content-center is-align-items-center" id="stream-wrapper">
+          <section id="stream">
+            <video muted="true"></video>
+          </section>
+        </section>
+
+        <section class="column">
+          <section class="control-panels is-flex is-justify-content-center is-align-items-center is-flex-direction-column">
+
+            <section id="video-controller" class="card">
+              <section class="card-content">
+                <h2>Video</h2>
+
+                <h3>Screen Source</h3>
+                <section class="overflow-controller">
+                  <span>{{ ui.screenSource }}</span>
+                </section>
+                <span><small>(<a href="#" v-on:click='triggerScreenSelection()'>Change</a>)</small> </span>
+
+                <h3>Format</h3>
+                <section class="overflow-controller">
+                  <span>MPEG-4 Recording</span>
+                </section>
+                <span><small>(<a href="#">Change</a>)</small> </span>
+
+              </section>
+            </section>
+
+            <section id="audio-controller" class="card">
+              <section class="card-content">
+                <h2>Audio</h2>
+                <span class="checkbox">
+                  <input type="checkbox">
+                  Capture system audio
+                </span>
+
+                <h3>Format</h3>
+                <section class="overflow-controller">
+                  <span>Microphone</span>
+                </section>
+                <span><small>(<a href="#">Change</a>)</small> </span>
+
+              </section>
+            </section>
+
+          </section>
+        </section>
+
+      </section>
+  
+      <section class="columns is-centered">
+        <section class="column is-half is-flex is-justify-content-center">
+          <button v-on:click="toggleRecording()" class="button is-light" id="recording-trigger">{{ ui.recordButton }}</button>
+        </section>
+      </section>
+
+      <div v-if='ui.screenSourceModal' class="custom-dialog">
+        <div class="columns is-centered dialog-wrapper">
+          <div v-for='source in screen.sources' v-on:click='setSource(source)' class="selection-card">
+            <img v-bind:src="source.thumbnail.toDataURL()">
+            <p>{{ source.name }}</p>
+          </div>
+        </div>
+        <button class="modal-close is-large" aria-label="close" v-on:click='ui.screenSourceModal = false'></button>
+      </div>
+
+      
+    </div>
+    <script defer type="module" src="./index.js"></script>
   </body>
 </html>

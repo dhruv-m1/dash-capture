@@ -3,22 +3,231 @@
   src: url(./assets/Poppins-Regular.ttf);
   font-family: 'Poppins';
 }
+@font-face {
+  src: url(./assets/Poppins-SemiBold.ttf);
+  font-family: 'Poppins-SemiBold';
+}
+@font-face {
+  src: url(./assets/Poppins-Bold.ttf);
+  font-family: 'Poppins-Bold';
+}
+@font-face {
+  src: url(./assets/Poppins-ExtraBold.ttf);
+  font-family: 'Poppins-ExtraBold';
+}
 
-body {
+html, body {
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
   height: 100vh;
   width: 100vw;
-  background: #FAFAFA;
+  background: #FAFAFA !important;
+  overflow: hidden !important;
 }
 
-.stream {
-  position: relative;
-  width: 500px;
-  height: 281.25px;
-  left: 48px;
-  top: 143px;
 
-  background: #F2F2F2;
+#stream-wrapper {
+  height: 60vh;
+}
+
+.control-panels {
+  height: 60vh;
+  position: relative;
+  top: 10px;
+  left: -35px;
+}
+
+.column {
+  padding: 0px !important;
+}
+
+
+#stream {
+  background: #000000;
   box-shadow: 0px 0px 25px 1px rgba(0, 0, 0, 0.35);
   border-radius: 5px;
+  width: 533.33px;
+  height: 300px;
+  position: relative;
+  top: 7px;
+}
+
+.card {
+  background: #FFFFFF;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.15);
+  border-radius: 5px;
+  width: 90%;
+  margin-bottom: 10px;
+}
+
+.card-content {
+  padding: 15px;
+}
+
+.card-content h2 {
+  font-family: Poppins;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 13.5px;
+  line-height: 18px;
+
+  color: #209CEE;
+
+}
+
+.card-content h3 {
+  font-family: Poppins;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 12.5px;
+  line-height: 6px;
+
+  color: #9F9A9A;
+
+  margin-top: 15px;
+}
+
+.card-content span {
+  font-family: Poppins;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 11.5px;
+  color: #1F2330;
+  margin-top: -2px;
+  max-width: 60%;
+}
+
+.card-content small {
+  font-family: Poppins;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 10.5px;
+  line-height: 15px;
+  position: relative;
+  top: -3.9px;
+}
+
+.card-content .overflow-controller {
+  max-width: 60%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  display: inline-block;
+  line-height: 15px;
+}
+
+#audio-controller .card-content h2 {
+  color: #01D1B2;
+
+}
+
+.checkbox input {
+  
+  position: relative;
+  top: 2px;
+}
+
+#recording-trigger {
+  background: #EEEEEE;
+  border-radius: 5px;
+  width: 259px;
+
+  height: 59px;
+
+  font-family: Poppins;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 27px;
+  text-align: center;
+
+  color: #4A4A4A;
+
+}
+
+#recording-trigger:hover {
+  opacity: 0.8;
+}
+
+
+#mode-selector input {
+  font-family: 'Poppins-ExtraBold';
+  font-style: normal;
+  font-weight: 800;
+  font-size: 24px;
+  line-height: 36px;
+  color: #4A4A4A;
+  background: transparent;
+  border: none !important;
+  position: relative;
+  left: 66px;
+  top: 55px;
+  width: 526px;
+}
+
+#mode-selector h5 {
+  font-family: 'Poppins-SemiBold';
+  font-style: normal;
+  font-weight: 600;
+  font-size: 12px;
+  line-height: 18px;
+  color: #9F9A9A;
+  position: relative;
+  left: 68px;
+  top: 55px;
+}
+
+#top-row {
+  height: 15vh;
+}
+
+.custom-dialog {
+  background-color: #FAFAFA !important;
+  z-index: 1;
+  width: 100vw;
+  height: 100vh;
+  position: absolute;
+  top: 0px;
+}
+
+.modal-close {
+  background-color: #4A4A4A !important;
+}
+
+.dialog-wrapper {
+  padding-top: 100px;
+  flex-wrap: wrap;
+}
+
+.selection-card {
+  margin-bottom: 25px;
+  margin-right: 37.5px;
+  margin-left: 37.5px;
+  display: flex;
+  cursor: pointer;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  width: 154.75px;
+}
+
+
+.selection-card img {
+  padding: 5px;
+  background: #FFFFFF;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.15);
+  border-radius: 5px;
+  height: 81.047px;
+  width: auto;
+}
+
+.selection-card p {
+  width: 150.75px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  margin-top: 5px;
+  background: #FFFFFF;
+  padding: 2px;
+  border-radius: 5px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.15);
 }
